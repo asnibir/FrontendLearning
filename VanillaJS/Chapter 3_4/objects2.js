@@ -53,3 +53,65 @@ let user4 = {
     }
 };
 user4.sayBye(); // Ilya
+
+// create a calculator
+let calculator = {
+    
+    read(){
+        this.a = +prompt('a?', 0);
+        this.b = +prompt('b?', 0);
+    },
+
+    sum(){
+        return this.a + this.b;
+    },
+
+    mul(){
+        return this.a * this.b;
+    }
+
+};
+calculator.read();
+console.log(calculator.sum());
+console.log(calculator.mul());
+
+// chaining exercise
+// let ladder = {
+//     setp: 0,
+//     up() {
+//         this.setp++;
+//     },
+//     down() {
+//         this.setp--;
+//     },
+//     showStep() {
+//         console.log("Current step: ", this.setp);
+//     }
+// }
+// ladder.up();
+// ladder.up();
+// ladder.down();
+// ladder.showStep();
+let ladder = {
+    step: 0,
+    up() {
+        this.step++;
+        return this;
+    },
+    down() {
+        this.step--;
+        return this;
+    },
+    showStep() {
+        console.log("Current step: ", this.step);
+        return this;
+    }
+}
+
+ladder
+    .up()
+    .up()
+    .down()
+    .showStep()
+    .down()
+    .showStep();
