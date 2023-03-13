@@ -1,0 +1,32 @@
+form {
+    background-color: green;
+    position: relative;
+    width: 240px;
+    height: 240px;
+    text-align: center;
+    cursor: pointer;
+}
+
+div {
+    background-color: blue;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 160px;
+    height: 160px;
+}
+
+p {
+    background-color: red;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 80px;
+    height: 80px;
+    margin: 0;
+}
+
+body {
+    line-height: 25px;
+    font-size: 16px;
+}
