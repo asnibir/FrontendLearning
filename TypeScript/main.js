@@ -1,26 +1,26 @@
 function doSomething() {
-    var i = 0;
+    let i = 0;
     for (; i < 5; i++) {
         console.log(i);
     }
     console.log('Finally: ' + i);
 }
 doSomething();
-var count = 5;
+let count = 5;
 // count = 'a';
-var a; // any type
+let a; // any type
 a = 1;
 a = true;
 a = 'a';
-var b;
-var c;
-var d;
-var e;
-var f = [1, 2, 3];
-var g = [1, true, 'a', false];
-var ColorRed = 0;
-var ColorGreen = 1;
-var ColorBlue = 2;
+let b;
+let c;
+let d;
+let e;
+let f = [1, 2, 3];
+let g = [1, true, 'a', false];
+const ColorRed = 0;
+const ColorGreen = 1;
+const ColorBlue = 2;
 var Colour;
 (function (Colour) {
     Colour[Colour["Red"] = 0] = "Red";
@@ -28,4 +28,11 @@ var Colour;
     Colour[Colour["Blue"] = 2] = "Blue";
 })(Colour || (Colour = {}));
 ; // all the related constant in a container
-var backgroundColor = Colour.Red;
+let backgroundColor = Colour.Red;
+// Type Assertions
+let message = 'abc'; // string
+let endsWithC = message.endsWith('c');
+let message2; // any type
+message2 = 'abc';
+let typeAss = message2.endsWith('c');
+let typeAss2 = message2.endsWith('c');
