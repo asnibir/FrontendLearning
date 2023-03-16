@@ -10,6 +10,10 @@ import { CoursesService } from './courses.service';
 import { AuthorsComponent } from './authors/authors.component';
 import { AuthorsService } from './authors.service';
 import { SummaryPipe } from './summary.pipe';
+import { FavoriteComponent } from './favorite/favorite.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TitleCasePipe } from './title-case.pipe'
+
 
 @NgModule({
   declarations: [
@@ -17,12 +21,15 @@ import { SummaryPipe } from './summary.pipe';
     CoursesComponent,
     CourseComponent,
     AuthorsComponent,
-    SummaryPipe
+    SummaryPipe,
+    FavoriteComponent,
+    TitleCasePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [
     CoursesService,

@@ -1,0 +1,14 @@
+<i  class="fa fa-star fa-3x"
+    [class.fa-solid] = "isFavoriteStar"
+    [class.fa-regular] = "!isFavoriteStar"
+    (click)="onClickStar()"
+    ></i>
+
+<br>
+<br>
+
+<i class="bi bi-heart" style="font-size: 3em;"
+   [class.bi-heart-fill] = "isFavoriteHeart"
+   [class.bi-heart] = "!isFavoriteHeart"
+   (click)="onClickHeart()"
+   ></i>
