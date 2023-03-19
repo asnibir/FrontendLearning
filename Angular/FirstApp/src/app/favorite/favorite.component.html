@@ -8,7 +8,11 @@
 <br>
 
 <i class="bi bi-heart" style="font-size: 3em;"
-   [class.bi-heart-fill] = "isFavoriteHeart"
-   [class.bi-heart] = "!isFavoriteHeart"
+    [ngClass]="{
+        'bi-heart-fill': isFavoriteHeart,
+        'bi-heart': !isFavoriteHeart
+    }"
    (click)="onClickHeart()"
-   ></i>
+   >
+</i>
+

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { faPills } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +6,37 @@ import { faPills } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title: string = "";
-  courses = [1];
 
+  task: any = {
+    title: 'Review applications',
+    assignee : null
+  }
+
+  courses2 = [1];
+  title: string = "";
+  courses: any;
   viewMode = 'map';
+
+  loadCourses(){
+    this.courses = [
+      {id: 1, name: 'Algorithm 1'},
+      {id: 2, name: 'Computer Graphics'},
+      {id: 3, name: 'Linear Algebra'},
+    ];
+  
+  }
+
+  onAdd() {
+    this.courses.push({id: 4, name: 'Economics'});
+  }
+  onRemove(course:any) {
+    let index = this.courses.indexOf(course);
+    this.courses.splice(index, 1);
+  }
+  onChange(course: any) {
+    course.name = 'UPDATED';
+  }
+
+  canSave = true;
 
 }

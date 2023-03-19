@@ -1,6 +1,11 @@
 <h1>Angular</h1>
-<!-- <courses></courses> -->
-<!-- <authors></authors> -->
+
+<contact-form></contact-form>
+
+
+
+<!-- <courses></courses>
+<authors></authors>
 <favorite></favorite>
 <br>
 <br>
@@ -8,14 +13,14 @@
 <br>
 <span [style.color]="'blue'" [style.font-weight]="'bold'" [style.font-size]="'24px'"> {{ title | titleCase }} </span>
 
-<div *ngIf="courses.length > 0; then courseList else noCourses"></div>
+<div *ngIf="courses2.length > 0; then courseList else noCourses"></div>
 
 <ng-template #courseList>
-    List of courses
+    <br>List of courses:
 </ng-template>
 
 <ng-template #noCourses>
-    No courses yet
+    <br>No courses yet
 </ng-template>
 
 <div [hidden] = "courses.length == 0">
@@ -25,22 +30,50 @@
 <div [hidden] = "courses.length > 0">
     No courses yet
 </div>
-
 <br>
+<button (click)="loadCourses( )">Load Courses</button>
+<br>
+<button (click)="onAdd()">Add</button>
 
-<ul class="nav nav-pills">
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Map View</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">List View</a>
+<ul>
+    <li *ngFor="let course of courses; index as i; even as isEven">
+        {{i}} : {{ course.name }} <span *ngIf="isEven" >(EVEN)</span>
+        
+        <button (click)="onRemove(course)" style="margin-left: 10px;">Remove</button>
+        <button (click)="onChange(course)" style="margin-left: 10px">Update</button>
     </li>
 </ul>
 
-<!-- <ul class="nav nav-pills">
-    <li [class.active]="viewMode == 'map'"><a (click)="viewMode = 'map'">Map View</a></li>
-    <li [class.active]="viewMode == 'list'"><a (click)="viewMode = 'list'">List View</a></li>
-</ul> -->
+<br>
+<button
+[ngStyle]="{
+        'backgroundColor': canSave ? 'blue' : 'gray',
+        'color' : canSave ? 'white' : 'gray',
+        'font-weight' : canSave? 'bold' : 'normal'
+    }"
+>
+Save
+</button>
+<br>
+<br>
+-->
+
+<!-- <span>{{ task.assignee?.name }}</span> <br><br> -->
+
+<!--
+<input type="text" [appInputFormat] = "'uppercase'"> <br><br>
+
+<ul class="nav nav-pills" style="cursor: pointer;">
+    <li class="nav-item" [class.active]="viewMode == 'map'">
+        <a class="nav-link active" (click)="viewMode = 'map'">Map View
+        </a>
+        <style ></style>
+    </li>
+    <li class="nav-item" [class.active]="viewMode == 'list'">
+        <a class="nav-link" (click)="viewMode = 'list'">List View</a>
+    </li>
+</ul>
+    
 
 <div [ngSwitch]="viewMode">
     <div *ngSwitchCase="'map'">Map View Content</div>
@@ -48,8 +81,13 @@
     <div *ngSwitchDefault>Otherwise</div>
 </div>
 
-<div>
-    <div>Map View Content</div>
-    <div>List View Content</div>
-</div>
 
+<br>
+
+<h1>Exercise: Zippy</h1>
+<zippy title="Shipping Details">
+    Shipping Details Content
+</zippy>
+<zippy title="Billing Details">
+    Billing Details Content
+</zippy> -->

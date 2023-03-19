@@ -12,7 +12,10 @@ import { AuthorsService } from './authors.service';
 import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { TitleCasePipe } from './title-case.pipe'
+import { TitleCasePipe } from './title-case.pipe';
+import { InputFormatDirective } from './input-format.directive';
+import { ZippyComponent } from './zippy/zippy.component';
+import { ContactFormComponent } from './contact-form/contact-form.component'
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import { TitleCasePipe } from './title-case.pipe'
     AuthorsComponent,
     SummaryPipe,
     FavoriteComponent,
-    TitleCasePipe
+    TitleCasePipe,
+    InputFormatDirective,
+    ZippyComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,

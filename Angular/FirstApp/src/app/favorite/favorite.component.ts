@@ -20,5 +20,4 @@ export class FavoriteComponent {
     console.log("Heart is clicked");
     this.isFavoriteHeart = !this.isFavoriteHeart;
   }
-
 }
