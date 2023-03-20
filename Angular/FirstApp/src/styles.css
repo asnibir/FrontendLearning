@@ -5,3 +5,7 @@ body {
     padding: 20px;
     background-color: antiquewhite;
 }
+
+.form-control.ng-touched.ng-invalid {
+    border: 2px solid red;
+}
