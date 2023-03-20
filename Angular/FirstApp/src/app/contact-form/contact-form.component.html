@@ -1,12 +1,18 @@
 <form>
     <div class="form-group">
         <label for="firstName">First Name</label>
-        <input id="firstName" type="text" class="form-control">
+        <input required ngModel name="firstName" #firstName="ngModel" (change)="log(firstName)" id="firstName"
+            type="text" class="form-control" style="width: 500px;">
+        <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+            First Name is required.
+        </div>
+
     </div>
     <div class="form-group">
         <label for="comment">Comment</label>
-        <textArea id="comment" cols="30" rows="30" class="form-control"></textArea>
-    
+        <textArea ngModel name="comment" id="comment" cols="10" rows="10" class="form-control"
+            style="width: 500px;"></textArea>
+
     </div>
     <button class="btn btn-primary">Submit</button>
 </form>
