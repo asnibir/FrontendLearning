@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'new-course-form',
@@ -7,12 +8,26 @@ import { Component } from '@angular/core';
 })
 export class NewCourseFormComponent {
   catagoryLists = [
-    {id:1, name:'Development'},
-    {id:2, name:'Art'},
-    {id:1, name:'Languages'},
+    { id: 1, name: 'Development' },
+    { id: 2, name: 'Art' },
+    { id: 1, name: 'Languages' },
   ];
 
   submit(course: any) {
     console.log(course);
   }
+
+  form = new FormGroup({
+    topics: new FormArray([])
+  });
+
+  addTopic(topic: HTMLInputElement) {
+    this.topics.push(new FormControl(topic.value));
+    topic.value = "";
+  }
+
+  get topics() {
+    return this.form.get('topics') as FormArray;
+  }
+
 }
