@@ -17,7 +17,11 @@ import { InputFormatDirective } from './input-format.directive';
 import { ZippyComponent } from './zippy/zippy.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
-import { SignupFormComponent } from './signup-form/signup-form.component'
+import { SignupFormComponent } from './signup-form/signup-form.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { RxwebFormComponent } from './rxweb-form/rxweb-form.component';
+import { PostsComponent } from './posts/posts.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -33,14 +37,18 @@ import { SignupFormComponent } from './signup-form/signup-form.component'
     ZippyComponent,
     ContactFormComponent,
     NewCourseFormComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    ChangePasswordComponent,
+    RxwebFormComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     FontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     CoursesService,
