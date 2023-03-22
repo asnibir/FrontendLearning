@@ -35,14 +35,6 @@ export class PostService {
   }
 
   deletePost(id: any){
-    return this.http.delete(this.url + '/' + id)
-      .pipe(
-        catchError((error: any) => {
-          if(error.status === 404) {
-            return throwError(new NotFoundError());
-          }
-          return throwError(new AppError(error));
-        })
-      )
+    return this.http.delete(this.url + '/' + id);
   }
 }

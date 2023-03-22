@@ -23,6 +23,7 @@ import { RxwebFormComponent } from './rxweb-form/rxweb-form.component';
 import { PostsComponent } from './posts/posts.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostService } from './post.service';
+import { ToDoAppComponent } from './to-do-app/to-do-app.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { PostService } from './post.service';
     SignupFormComponent,
     ChangePasswordComponent,
     RxwebFormComponent,
-    PostsComponent
+    PostsComponent,
+    ToDoAppComponent
   ],
   imports: [
     BrowserModule,
