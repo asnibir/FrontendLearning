@@ -22,6 +22,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { RxwebFormComponent } from './rxweb-form/rxweb-form.component';
 import { PostsComponent } from './posts/posts.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PostService } from './post.service';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     CoursesService,
-    AuthorsService
+    AuthorsService,
+    PostService
   ],
   bootstrap: [AppComponent]
 })
